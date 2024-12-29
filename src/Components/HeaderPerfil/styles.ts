@@ -5,6 +5,7 @@ import { Cores } from "../../styles";
 
 export const Header = styled.header`
   width:100%;
+
   height:186px;
 `
 export const HeaderContainer = styled.div`
@@ -15,25 +16,18 @@ export const HeaderContainer = styled.div`
     text-align:center;
     margin-top:82px;
   }
-  position:absolute;
-  .container{
-      left:318px;
-      position:relative;
-    }
+
   ${ButtonContainer}{
     margin-top:82px;
-    margin-left:194px;
   }
 `
 export const ButtonsContainer = styled.div`
     display:flex;
     justify-content:space-between;
     align-items:center;
-
+    max-width:1024px;
+    margin:0 auto;
     img{
-      margin-left:194px;
-      margin-top:63px;
+      margin-top:82px;
     }
-
-
 `
