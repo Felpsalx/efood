@@ -31,7 +31,4 @@ export const TitleContainer = styled.div`
   padding:25px 0px;
 `
 
-export const TextContainer = styled.div`
-  margin-left:100px;
-`
 
