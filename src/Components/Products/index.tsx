@@ -1,35 +1,46 @@
+
 import star from '../../assets/star.png'
+import { ItensCardapio } from '../../Pages/Home'
 import { ButtonLink } from '../Buttons/styles'
 import Tag from '../Tag'
 
 import { ButtonContainer, CardContent,  ContentContainer,  ImageContainer,  Infos,  RatingContainer, StarContainer, TitleContainer } from './styles'
 
-type Props = {
-  title: string
-  image: string
-  rating: number
-  description:string
-  infos:string[]
-}
 
 
-export default function Products({ image,title, rating,description, infos}:Props) {
+
+
+export default function Products({ capa,titulo, avaliacao,descricao, tipo, id, destacado}:ItensCardapio) {
+
+
+  const infosToDisplay = Array.isArray(tipo) ? tipo.join(', ') : tipo;
   return (
     <>
-    <ImageContainer style={{backgroundImage: `url(${image})`}}>
-      <Infos>
-      {infos.map((info) => (
-        <Tag key={info}>{info}</Tag>
-      ))}
-      </Infos>
+    <ImageContainer>
+      <img  src={capa} alt="" />
+    <Infos>
+
+          {destacado ? (
+                <Tag>
+                  <p>
+                    Destaque da semana
+                  </p>
+                </Tag>
+              ) : ''}
+          <Tag>
+            <p>
+              {infosToDisplay}
+            </p>
+          </Tag>
+        </Infos>
     </ImageContainer>
     <CardContent>
           <div>
             <TitleContainer>
-              {title}
+              {titulo}
               <RatingContainer>
                 <div>
-                  {rating}
+                  {avaliacao}
                 </div>
                 <StarContainer>
                   <img src={star} alt="Estrela de avaliação" title='Avaliação' />
@@ -37,10 +48,11 @@ export default function Products({ image,title, rating,description, infos}:Props
               </RatingContainer>
             </TitleContainer>
             <ContentContainer>
-              {description}
+              {descricao}
             </ContentContainer>
+
             <ButtonContainer>
-              <ButtonLink to='/perfil' title='Saiba mais'>Saiba mais</ButtonLink>
+              <ButtonLink to={`/perfil/${id}`} title='Saiba mais'>Saiba mais</ButtonLink>
             </ButtonContainer>
           </div>
       </CardContent>

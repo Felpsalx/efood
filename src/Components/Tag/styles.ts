@@ -7,4 +7,7 @@ export const TagContainer = styled.div`
   color:${Cores.white2};
   font-size:12px;
   padding:4px 6px;
+  p::first-letter{
+    text-transform:uppercase;
+  }
 `

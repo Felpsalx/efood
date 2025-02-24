@@ -1,37 +1,30 @@
 import { List, ListItems, ListProductsContainer } from './styles'
 import Products from '../Products'
-import sushi from '../../assets/sushi.png'
-import massa from '../../assets/massa.png'
+import { ItensCardapio } from '../../Pages/Home'
 
 
-export default function ListProduct() {
+export type Props={
+  lists: ItensCardapio[]
+}
+export default function ListProduct({lists}: Props) {
   return (
     <ListProductsContainer>
       <div className='container'>
         <List>
-          <ListItems>
-            <Products  title={'Hioki Sushi '} rating={4.9} image={sushi} description={'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!'} infos={[  'Destaque do dia', 'Japonesa']}/>
-          </ListItems>
+          {lists.map((list)=>(
+            <ListItems key={list.id}>
 
-          <ListItems>
-            <Products image={massa} title={'La Dolce Vita Trattoria'} rating={4.6} description={'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!'} infos={['Italiana']}  />
-          </ListItems>
 
-          <ListItems>
-            <Products image={sushi} title={'Hioki Sushi '} rating={4.6} description={'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!'} infos={['Japonesa']} />
-          </ListItems>
+            <Products
+                titulo={list.titulo}
+                avaliacao={list.avaliacao}
+                capa={list.capa}
+                descricao={list.descricao}
+                tipo={list.tipo}
+                id={list.id} foto={''} destacado={list.destacado} />
 
-          <ListItems>
-            <Products image={massa} title={'La Dolce Vita Trattoria'} rating={4.6} description={'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!'}  infos={['Italiana']} />
           </ListItems>
-
-          <ListItems>
-            <Products image={sushi} title={'Hioki Sushi'} rating={4.6} description={'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!'} infos={['Japonesa']}  />
-          </ListItems>
-
-          <ListItems>
-            <Products image={massa} title={'La Dolce Vita Trattoria'} rating={4.6} description={'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!'} infos={['Italiana']}  />
-          </ListItems>
+          ))}
         </List>
       </div>
     </ListProductsContainer>

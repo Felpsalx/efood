@@ -1,10 +1,10 @@
 import { ButtonContainer, ButtonLink } from "./styles"
 
 type Props = {
-  children: string
+  children?: string
   to?: string
-  title: string
-  type:'button' | 'link'
+  title?: string
+  type?:'button' | 'link'
   Onclick?:  () => void
 }
 

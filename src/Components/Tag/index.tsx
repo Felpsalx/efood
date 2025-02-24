@@ -1,7 +1,7 @@
 import { TagContainer } from "./styles"
 
 type Props = {
-  children: string
+  children: JSX.Element
 }
 
 export default function Tag({children}:Props) {

@@ -3,7 +3,10 @@ import hero from '../../assets/HeroHeader.png';
 import logo from '../../assets/logo.png';
 import { Button } from '../Buttons';
 
+
+
 export default function HeaderPerfil() {
+
 
   return (
     <Header style={{backgroundImage: `url(${hero})`}}>

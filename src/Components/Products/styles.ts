@@ -9,11 +9,15 @@ export const CardContent = styled.div`
   color:${Cores.pink};
 `
 export const ImageContainer = styled.div`
-  position: relative;
-  width:100%;
-  display:block;
-  height:217px;
-  background-repeat:no-repeat;
+    position: relative;
+  img{
+    max-width:472px;
+    width:100%;
+    max-height:217px;
+    height:100%;
+    display:block;
+    object-fit:cover;
+  }
   ${TagContainer} {
     margin-right:8px;
   }

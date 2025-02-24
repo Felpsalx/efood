@@ -3,15 +3,35 @@ import { Cores } from "../../styles";
 
 
 export const BannerContainer = styled.div`
-  width:100%;
-  height:100%;
-  background-color:#0005;
+  position:relative;
+  top:0;
+  left:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  max-height:280px;
+  z-index:1;
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    content: '';
+    z-index:-1;
+  }
+  img{
+    position:absolute;
+    object-fit:cover;
+    z-index:-1;
+    width:100%;
+    height:100%;
+  }
 `
 export const PerfilBanner = styled.div`
   width:100%;
-  height:280px;
   background-repeat:no-repeat;
-  background-size:cover;
 `
 export const Title = styled.h1`
   color:${Cores.white};
@@ -25,6 +45,9 @@ export const SubTitle = styled.p`
   font-size:32px;
   font-weight:100;
   line-height:37px;
+  &::first-letter{
+    text-transform:uppercase;
+  }
 `
 
 export const TitleContainer = styled.div`
