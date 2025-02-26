@@ -77,7 +77,7 @@ export const ModalContent = styled.div`
   position:relative;
   display:flex;
   max-width:1024px;
-  width:100%;
+	max-height:280px;
   z-index:1;
   background-color:${Cores.pink};
   border-radius:2px;
@@ -110,7 +110,7 @@ export const ModalContent = styled.div`
   }
 
   > img{
-    max-width:280px;
+    width:280px;
     max-height:280px;
     margin:32px;
     object-fit:cover;
