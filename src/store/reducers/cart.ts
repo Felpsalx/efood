@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ItensCardapio } from '../../Pages/Home'
 
-const storedItems = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
+const storedItems = JSON.parse(localStorage.getItem('items') || '[]');
 
 type CartState = {
   items: ItensCardapio[]
