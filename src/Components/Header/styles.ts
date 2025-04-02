@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import { Cores } from "../../styles";
+import { Breakpoints, Cores } from "../../styles";
 
 
 export const Imagem=styled.div`
-width:100%;
-height:380px;
+	width:100%;
+	height:380px;
+
 `
 
 
@@ -14,13 +15,13 @@ export const ContainerHeader = styled.header`
   justify-content:center;
   align-items:center;
 
-
 `
 export const LogoContainer = styled.div`
     margin-top:64px;
     margin-bottom:140px;
     width:125px;
     height:57px;
+	
 `
 
 export const TextContainer = styled.div`
@@ -28,9 +29,15 @@ export const TextContainer = styled.div`
   width:539px;
   height:84px;
   text-align:center;
+	@media (max-width: ${Breakpoints.tablet}) {
+			width:100%;
+		}
 `
 export const Text = styled.h1`
     font-size:36px;
     font-weight:bold;
     color:${Cores.pink};
+		@media (max-width: ${Breakpoints.tablet}) {
+			font-size:24px;
+		}
 `

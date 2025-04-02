@@ -3,6 +3,8 @@
 //import ProductsListTwo from "../../Components/PerfilListProducts";
 
 import { lazy, Suspense } from 'react';
+import CartHeader from '../../Components/Cart';
+
 
 
 const Banner = lazy(() => import('../../Components/Banner'));
@@ -12,11 +14,11 @@ export default function Perfil() {
 
   return (
     <div>
-			
-      <Suspense fallback='Carregando'>
       <HeaderPerfil />
+      <Suspense>
       <Banner />
       <ProductsListTwo/>
+			<CartHeader />
       </Suspense>
     </div>
   )

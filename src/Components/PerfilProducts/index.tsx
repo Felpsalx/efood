@@ -6,12 +6,13 @@ import { ItensCardapio } from "../../Pages/Home";
 import { Button } from "../Buttons";
 import { useState } from "react";
 import close from '../../assets/close 1.svg'
+import { useDispatch } from "react-redux";
+import { add, open } from "../../store/reducers/cart";
 
 interface ModalState extends ItensCardapio{
   visivel: boolean
 }
-
-export default function CardPerfil({titulo, descricao, foto, porcao, preco}:ItensCardapio) {
+export default function CardPerfil({titulo, descricao, foto, porcao, preco, id}:ItensCardapio) {
   const [modal, setModal] = useState<ModalState>({
     visivel: false,
     titulo,
@@ -31,6 +32,12 @@ export default function CardPerfil({titulo, descricao, foto, porcao, preco}:Iten
       return descricao.slice(0, 120) + '...'
     }
     return descricao
+  }
+	const dispatch = useDispatch()
+  const addCart = () => {
+		dispatch(add({ titulo, foto, preco, id}));
+    dispatch(open())
+		fecharModal()
   }
   return (
     <>
@@ -52,7 +59,7 @@ export default function CardPerfil({titulo, descricao, foto, porcao, preco}:Iten
             </header>
           <Content>{descricao}</Content>
           <Content>Serve: {porcao}</Content>
-          <ButtonModal title="Adicionar ao carrinho">Adicionar ao carrinho - {formatapreco(preco)}</ButtonModal>
+          <ButtonModal onClick={addCart} title="Adicionar ao carrinho">Adicionar ao carrinho - {formatapreco(preco)}</ButtonModal>
           </div>
         </ModalContent>
           <div className="overlay" onClick={fecharModal}></div>

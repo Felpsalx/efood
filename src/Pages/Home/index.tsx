@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+
 import Header from '../../Components/Header'
 import ListProduct from '../../Components/ListProducts'
 
-
+import {useGetRestaurantesQuery} from '../../services/api'
+import { ContainerSpinner, LoadingSpinner } from './styles'
 
 export interface ItensCardapio  {
   titulo?: string
@@ -10,7 +11,7 @@ export interface ItensCardapio  {
   capa?: string
   avaliacao?: number
   id?: number
-  descricao:string
+  descricao?:string
   tipo?:string[]
   foto: string
   destacado?:boolean;
@@ -18,16 +19,24 @@ export interface ItensCardapio  {
   preco?: number
 }
 export default function Home() {
-  const [list, setList] = useState<ItensCardapio[]>([])
-  useEffect(()=> {
-    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes').then((res) => res.json()).then((res) => setList(res) )
 
-  }, [])
+	const {data: list} = useGetRestaurantesQuery()
 
-  return (
-    <div>
-      <Header />
-        <ListProduct lists={list}/>
-    </div>
+
+	if(list){
+		return(
+		<div>
+			<Header />
+			<ListProduct lists={list!}/>
+		</div>
+		)
+	}
+	return (
+		<div>
+				<Header />
+    <ContainerSpinner>
+        <LoadingSpinner></LoadingSpinner>
+    </ContainerSpinner>
+		</div>
   )
 }

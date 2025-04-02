@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Cores } from "../../styles";
+import { Breakpoints, Cores } from "../../styles";
 import { ButtonContainer } from "../Buttons/styles";
 
 
@@ -10,11 +10,15 @@ export const ProductContainer = styled.div`
   color:${Cores.white};
   border-radius:3px;
   position:relative;
+	
   img{
     width:304px;
     max-height:167px;
     border-radius:2px;
     object-fit:cover;
+		@media (max-width: ${Breakpoints.tablet}) {
+			width:100%;
+		}	
   }
   ${ButtonContainer}{
     width:100%;
@@ -22,6 +26,9 @@ export const ProductContainer = styled.div`
     background-color:white;
     padding:4px;
     border-radius:3px;
+		@media (max-width: ${Breakpoints.tablet}) {
+			font-size:14px;
+		}	
   }
 
 
@@ -50,8 +57,10 @@ export const Modal = styled.div`
   align-items: center;
   justify-content: center;
   z-index:1;
+
   &.visivel{
     display:flex;
+		
   }
 
   .overlay{
@@ -63,6 +72,8 @@ export const Modal = styled.div`
     background-color: rgba(0, 0, 0, 0.75);
   }
 
+
+
 `
 
 export const Title = styled.h1`
@@ -70,7 +81,7 @@ export const Title = styled.h1`
   font-weight:bold;
   margin-bottom:8px;
   margin-top:8px;
-
+	
 `
 
 export const ModalContent = styled.div`
@@ -81,6 +92,14 @@ export const ModalContent = styled.div`
   z-index:1;
   background-color:${Cores.pink};
   border-radius:2px;
+	@media (max-width: ${Breakpoints.desktop}) {
+			max-width: 90%;
+		}	
+	@media (max-width: ${Breakpoints.tablet}) {
+			flex-direction:column;
+			max-height:680px;
+		}
+	
   .fecharModal{
     display: flex;
     flex-direction: row;
@@ -105,6 +124,12 @@ export const ModalContent = styled.div`
     font-size:18px;
     margin-bottom:16px;
     color:${Cores.white};
+		@media (max-width: ${Breakpoints.desktop}) {
+			font-size:16px;
+		}	
+		@media (max-width: ${Breakpoints.tablet}) {
+			font-size:12px;
+		}
   }
 
   }
@@ -116,6 +141,13 @@ export const ModalContent = styled.div`
     object-fit:cover;
     display:block;
     border-radius:2px;
+		@media (max-width: ${Breakpoints.desktop}) {
+			width:280px;
+    	max-height:180px;
+		}	
+		@media (max-width: ${Breakpoints.tablet}) {
+			width:320px;
+		}
   }
 `
 export const Content = styled.p`

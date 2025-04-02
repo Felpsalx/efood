@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Cores } from "../../styles";
+import { Breakpoints, Cores } from "../../styles";
 
 import { Link } from "react-router-dom";
 
@@ -19,4 +19,7 @@ export const ButtonContainer = styled.button`
   font-weight:bold;
   border:none;
   cursor: pointer;
+	@media (max-width: ${Breakpoints.tablet}) {
+			font-size:16px;
+		}
 `

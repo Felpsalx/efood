@@ -1,16 +1,17 @@
 import { BannerContainer, PerfilBanner, SubTitle,  Title, TitleContainer } from "./styles";
-import { useEffect, useState } from "react";
-import { ItensCardapio } from "../../Pages/Home";
+
 import { useParams } from "react-router-dom";
+import { useGetRestauranteQuery } from "../../services/api";
+
 
 export default function Banner() {
   const {id} = useParams()
 
-  const [rrestaurante, setRRestaurante] = useState<ItensCardapio>()
-  useEffect(()=> {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`).then((res) => res.json()).then((res) => setRRestaurante(res) )
+		
+	
+		const { data: rrestaurante } = useGetRestauranteQuery(id!)
+	
 
-  }, [id])
   return (
     <PerfilBanner>
       <BannerContainer>

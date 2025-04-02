@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import { Cores } from "../../styles";
+import { Breakpoints, Cores } from "../../styles";
 
 
 export const FooterContainer = styled.div`
   background-color:${Cores.white2};
   width:100%;
   height:100%;
+
 `
 export const FooterContentContainer = styled.div`
   display:flex;
@@ -37,4 +38,7 @@ export const FooterText= styled.p`
   color:${Cores.pink};
   margin-top:80px;
   margin-bottom:40px;
+	@media (max-width: ${Breakpoints.tablet}) {
+		width:80%;
+  }
 `

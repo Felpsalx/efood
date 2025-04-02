@@ -4,10 +4,11 @@ import { Route, Routes } from "react-router-dom"
 import { lazy, Suspense } from "react";
 
 
+
 const Perfil = lazy(() => import('./src/Pages/Perfil'));
 const Home = lazy(() => import('./src/Pages/Home'));
 const Rotas = () => (
-    <Suspense fallback='carregando'>
+    <Suspense>
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/perfil/:id" element={<Perfil />}/>

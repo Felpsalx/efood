@@ -15,7 +15,7 @@ export default function Products({ capa,titulo, avaliacao,descricao, tipo, id, d
 
   const infosToDisplay = Array.isArray(tipo) ? tipo.join(', ') : tipo;
   return (
-    <>
+    <div>
     <ImageContainer>
       <img  src={capa} alt="" />
     <Infos>
@@ -56,6 +56,6 @@ export default function Products({ capa,titulo, avaliacao,descricao, tipo, id, d
             </ButtonContainer>
           </div>
       </CardContent>
-    </>
+    </div>
   )
 }

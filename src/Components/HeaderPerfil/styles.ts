@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import { ButtonContainer, ButtonLink } from "../Buttons/styles";
-import { Cores } from "../../styles";
+import { Breakpoints, Cores } from "../../styles";
 
 
 export const Header = styled.header`
   width:100%;
-
   height:186px;
 `
 export const HeaderContainer = styled.div`
@@ -27,7 +26,11 @@ export const ButtonsContainer = styled.div`
     align-items:center;
     max-width:1024px;
     margin:0 auto;
+
     img{
       margin-top:82px;
+			@media (max-width: ${Breakpoints.tablet}) {
+			width:30%;
+			}
     }
 `

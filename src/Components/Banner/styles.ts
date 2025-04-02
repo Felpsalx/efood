@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Cores } from "../../styles";
+import { Breakpoints, Cores } from "../../styles";
 
 
 export const BannerContainer = styled.div`
@@ -38,6 +38,9 @@ export const Title = styled.h1`
   font-size:32px;
   font-weight:bold;
   margin-top:157px;
+	@media (max-width: ${Breakpoints.tablet}) {
+			font-size:24px;
+		}	
 `
 
 export const SubTitle = styled.p`
@@ -48,6 +51,9 @@ export const SubTitle = styled.p`
   &::first-letter{
     text-transform:uppercase;
   }
+	@media (max-width: ${Breakpoints.tablet}) {
+			font-size:24px;
+		}	
 `
 
 export const TitleContainer = styled.div`
