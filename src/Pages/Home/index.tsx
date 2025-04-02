@@ -17,6 +17,7 @@ export interface ItensCardapio  {
   destacado?:boolean;
   porcao?: string
   preco?: number
+	cardapio?: string
 }
 export default function Home() {
 

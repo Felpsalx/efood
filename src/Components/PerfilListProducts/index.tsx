@@ -13,7 +13,7 @@ export default function ProductsListTwo() {
 
 	const { data } = useGetRestauranteQuery(id!)
 
-	const cardapioitens = data?.cardapio;
+	const cardapioitens = Array.isArray(data?.cardapio) ? data.cardapio : [];
   
 	if(!cardapioitens){
 		return(

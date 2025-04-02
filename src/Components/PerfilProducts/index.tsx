@@ -44,7 +44,7 @@ export default function CardPerfil({titulo, descricao, foto, porcao, preco, id}:
       <ProductContainer>
         <img loading="lazy" src={foto} alt="" />
         <Title>{titulo}</Title>
-        <Content>{fomataDescricao(descricao)}</Content>
+        <Content>{fomataDescricao(descricao!)}</Content>
         <Button children={"Ver mais"} title={"Ver mais sobre o produto"} type={"button"} Onclick={toggleModal}/>
       </ProductContainer>
       <Modal className={modal.visivel ? 'visivel' : ''}>

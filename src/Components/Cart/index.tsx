@@ -41,10 +41,10 @@ export default function CartHeader() {
 					<SideBarItems key={item.id}>
 					<img src={item.foto} alt={item.titulo} />
 					<SideTextContainer>
-						<h3>{formataDescricao(item.titulo) }</h3>
+					<h3>{formataDescricao(item.titulo ?? '')}</h3>
 						<p>{formatapreco(item.preco)}</p>
 					<div>
-						<img src={trashcan} onClick={()=> deletar(item.id)} />
+						<img src={trashcan} onClick={()=> deletar(item.id!)} />
 					</div>
 					</SideTextContainer>
 					</SideBarItems>
