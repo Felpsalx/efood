@@ -128,7 +128,7 @@ export const ModalContent = styled.div`
 			font-size:16px;
 		}	
 		@media (max-width: ${Breakpoints.tablet}) {
-			font-size:14px;
+			font-size:16px;
 		}
   }
 
