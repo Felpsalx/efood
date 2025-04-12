@@ -1,6 +1,7 @@
 
+import { memo } from 'react'
 import star from '../../assets/star.png'
-import { ItensCardapio } from '../../Pages/Home'
+import { ItensCardapio } from '../../Interfaces/itensCardapio'
 import { ButtonLink } from '../Buttons/styles'
 import Tag from '../Tag'
 
@@ -10,7 +11,7 @@ import { ButtonContainer, CardContent,  ContentContainer,  ImageContainer,  Info
 
 
 
-export default function Products({ capa,titulo, avaliacao,descricao, tipo, id, destacado}:ItensCardapio) {
+function Products({ capa,titulo, avaliacao,descricao, tipo, id, destacado}:ItensCardapio) {
 
 
   const infosToDisplay = Array.isArray(tipo) ? tipo.join(', ') : tipo;
@@ -59,3 +60,4 @@ export default function Products({ capa,titulo, avaliacao,descricao, tipo, id, d
     </div>
   )
 }
+export default memo(Products)

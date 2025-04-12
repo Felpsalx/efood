@@ -1,6 +1,6 @@
 import { List, ListItems, ListProductsContainer } from './styles'
 import Products from '../Products'
-import { ItensCardapio } from '../../Pages/Home'
+import { ItensCardapio } from '../../Interfaces/itensCardapio'
 
 
 export type Props={

@@ -3,8 +3,8 @@ import CardPerfil from "../PerfilProducts";
 import { List, ListItems, ProductsContainer } from "./styles";
 
 import { useGetRestauranteQuery } from "../../services/api";
-import { ContainerSpinner, LoadingSpinner } from "../../Pages/Home/styles";
-
+import { ContainerSpinner } from "../../Pages/Home/styles";
+import { ClockLoader } from "react-spinners";
 
 
 export default function ProductsListTwo() {
@@ -18,7 +18,7 @@ export default function ProductsListTwo() {
 	if(!cardapioitens){
 		return(
 			<ContainerSpinner>
-					<LoadingSpinner /> 
+					<ClockLoader size={100}/>
 			</ContainerSpinner>
 		)
 	}

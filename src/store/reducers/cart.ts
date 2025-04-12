@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ItensCardapio } from '../../Pages/Home'
+import { ItensCardapio } from '../../Interfaces/itensCardapio'
 
 const storedItems = JSON.parse(localStorage.getItem('items') || '[]');
 

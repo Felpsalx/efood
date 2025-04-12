@@ -2,7 +2,7 @@ import { ButtonModal, Content, Modal, ModalContent, ProductContainer, Title } fr
 
 
 
-import { ItensCardapio } from "../../Pages/Home";
+import { ItensCardapio } from '../../Interfaces/itensCardapio'
 import { Button } from "../Buttons";
 import { useState } from "react";
 import close from '../../assets/close 1.svg'
