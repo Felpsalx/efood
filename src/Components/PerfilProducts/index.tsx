@@ -8,7 +8,8 @@ import { useState } from "react";
 import close from '../../assets/close 1.svg'
 import { useDispatch } from "react-redux";
 import { add, open } from "../../store/reducers/cart";
-
+import {formatapreco} from '../../utils/formatapreco'
+import {fomataDescricao} from '../../utils/formataTexto'
 interface ModalState extends ItensCardapio{
   visivel: boolean
 }
@@ -21,18 +22,8 @@ export default function CardPerfil({titulo, descricao, foto, porcao, preco, id}:
   });
   const toggleModal = () => setModal({...modal,visivel: true});
   const fecharModal = () => setModal({...modal,visivel: false});
-  const formatapreco = (preco = 0) => {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(preco)
-  }
-  const fomataDescricao = (descricao: string) => {
-    if (descricao.length > 135) {
-      return descricao.slice(0, 120) + '...'
-    }
-    return descricao
-  }
+ 
+  
 	const dispatch = useDispatch()
   const addCart = () => {
 		dispatch(add({ titulo, foto, preco, id}));
