@@ -6,7 +6,7 @@ const Header = () =>(
       <Imagem style={{backgroundImage:`url(${Hero})`}}>
         <ContainerHeader>
           <LogoContainer>
-            <img src={Logo} alt="Efood logo" title='E-FOOD'/>
+            <img src={Logo} alt="Efood logo" title='E-FOOD' width={"125px"} height={"57.5px"}/>
           </LogoContainer>
             <TextContainer>
               <Text>
