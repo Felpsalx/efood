@@ -13,6 +13,23 @@ export const Breakpoints ={
 
 export const GlobalCss = createGlobalStyle`
 	
+	@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/roboto-v30-latin-regular.woff2') format('woff2');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/roboto-v30-latin-700.woff2') format('woff2');
+    font-display: swap;
+  }
+
+
 *{
   margin:0;
   padding: 0;
