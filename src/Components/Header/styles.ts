@@ -9,13 +9,13 @@ export const Imagem=styled.div`
 `
 
 
-export const ContainerHeader = styled.header`
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+// export const ContainerHeader = styled.header`
+//   display:flex;
+//   flex-direction:column;
+//   justify-content:center;
+//   align-items:center;
 
-`
+// `
 export const LogoContainer = styled.div`
     margin-top:64px;
     margin-bottom:140px;
@@ -41,3 +41,27 @@ export const Text = styled.h1`
 			font-size:24px;
 		}
 `
+export const ImagemWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 400px; 
+  overflow: hidden;
+`;
+
+export const HeroImage = styled.img`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+`;
+
+export const ContainerHeader = styled.div`
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+`;
