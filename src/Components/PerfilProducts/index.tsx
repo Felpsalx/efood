@@ -4,7 +4,7 @@ import { ButtonModal, Content, Modal, ModalContent, ProductContainer, Title } fr
 
 import { ItensCardapio } from '../../Interfaces/itensCardapio'
 import { Button } from "../Buttons";
-import { useState } from "react";
+import { memo, useState } from "react";
 import close from '../../assets/close 1.svg'
 import { useDispatch } from "react-redux";
 import { add, open } from "../../store/reducers/cart";
@@ -13,15 +13,15 @@ import {fomataDescricao} from '../../utils/formataTexto'
 interface ModalState extends ItensCardapio{
   visivel: boolean
 }
-export default function CardPerfil({titulo, descricao, foto, porcao, preco, id}:ItensCardapio) {
+ function CardPerfil({titulo, descricao, foto, porcao, preco, id}:ItensCardapio) {
   const [modal, setModal] = useState<ModalState>({
     visivel: false,
     titulo,
     descricao,
     foto
   });
-  const toggleModal = () => setModal({...modal,visivel: true});
-  const fecharModal = () => setModal({...modal,visivel: false});
+  const toggleModal = () => setModal(prevState => ({ ...prevState, visivel: true }));
+	const fecharModal = () => setModal(prevState => ({ ...prevState, visivel: false }));
  
   
 	const dispatch = useDispatch()
@@ -58,3 +58,4 @@ export default function CardPerfil({titulo, descricao, foto, porcao, preco, id}:
     </>
   )
 }
+export default memo(CardPerfil)
