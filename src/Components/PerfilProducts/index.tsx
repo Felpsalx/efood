@@ -1,7 +1,4 @@
 import { ButtonModal, Content, Modal, ModalContent, ProductContainer, Title } from "./styles";
-
-
-
 import { ItensCardapio } from '../../Interfaces/itensCardapio'
 import { Button } from "../Buttons";
 import { memo, useState } from "react";
