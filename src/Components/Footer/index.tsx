@@ -11,7 +11,7 @@ export default function Footer() {
       <div className='container'>
       <FooterContentContainer>
         <FooterLogoContainer>
-          <img src={Logo} alt="" />
+          <img src={Logo} alt="" width={"125px"} height={"57.7px"}/>
         </FooterLogoContainer>
         <FooterSocialIcons>
         <img src={instagram} alt="" />
