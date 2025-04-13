@@ -44,7 +44,7 @@ function Products({ capa,titulo, avaliacao,descricao, tipo, id, destacado}:Itens
                   {avaliacao}
                 </div>
                 <StarContainer>
-                  <img src={star} alt="Estrela de avaliação" title='Avaliação' />
+                  <img src={star} alt="Estrela de avaliação" title='Avaliação' width={"21px"} height={"20px"} />
                 </StarContainer>
               </RatingContainer>
             </TitleContainer>
