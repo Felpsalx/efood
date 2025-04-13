@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import Perfil from './src/Pages/Perfil'
 import Home from "./src/Pages/Home"
-import React from "react"
 
 
 
