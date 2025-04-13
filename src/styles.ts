@@ -1,3 +1,4 @@
+
 import { createGlobalStyle } from "styled-components";
 export const Cores = {
   pink:'#E66767',
@@ -11,7 +12,7 @@ export const Breakpoints ={
 }
 
 export const GlobalCss = createGlobalStyle`
-
+	
 *{
   margin:0;
   padding: 0;
