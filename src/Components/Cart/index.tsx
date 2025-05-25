@@ -1,7 +1,7 @@
 import { CartCotainer, Content, ContentOfcontent, ContentOfText, DeliveryContainer, Overlay, SideBar, SideBarItems, SideTextContainer } from "./styles";
 import { useDispatch, useSelector } from "react-redux";
 import { RootReducer } from "../../store";
-import { close, remove } from "../../store/reducers/cart";
+import { clearCart, close, remove } from "../../store/reducers/cart";
 import { ButtonModal } from "../PerfilProducts/styles";
 import trashcan from '../../assets/trashcan.svg'
 import { useState } from "react";
@@ -104,6 +104,7 @@ export default function CartHeader() {
 		setEntrega(false)
 		reset()
 		form.resetForm()
+		dispatch(clearCart())
   }
 	const deletar = (id: number) => {
     dispatch(remove(id))
