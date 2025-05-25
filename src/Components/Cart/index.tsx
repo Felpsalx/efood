@@ -43,7 +43,7 @@ export default function CartHeader() {
         entrega ? schema.required('O campo é obrigatorio').min(5,'O nome deve ter no minimo 5 caracteres') : schema
       ),
 			NumberCard: Yup.string().when((_, schema) =>
-        entrega ? schema.required('O campo é obrigatorio').min(16,'O cartão deve ter no minimo 16 caracteres').max(16,'O cartão deve ter no minimo 16 caracteres') : schema
+        entrega ? schema.required('O campo é obrigatorio').min(16,'O cartão deve ter no minimo 16 caracteres').max(16,'O cartão deve ter no maximo 16 caracteres') : schema
       ),
 			MouthVenc: Yup.string().when((_, schema) =>
         entrega ? schema.required('O campo é obrigatorio').min(2,'O mês tem 2 caracteres correija seu erro').max(2,'O campo esta errado') : schema
