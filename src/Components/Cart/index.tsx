@@ -39,19 +39,19 @@ export default function CartHeader() {
 			NumberHouse: Yup.string().min(1,'Por favor verifique o número de sua residencia e tente novamente').required('Campo Obrigatorio'),
 			Complement: Yup.string().min(5,'O minimo é 5 caracteres'),
 
-			CardName: Yup.string().when(( schema) =>
+			CardName: Yup.string().when((values, schema) =>
         entrega ? schema.required('O campo é obrigatorio').min(5,'O nome deve ter no minimo 5 caracteres') : schema
       ),
-			NumberCard: Yup.string().when(( schema) =>
+			NumberCard: Yup.string().when((values, schema) =>
         entrega ? schema.required('O campo é obrigatorio').min(16,'O cartão deve ter no minimo 16 caracteres').max(16,'O cartão deve ter no minimo 16 caracteres') : schema
       ),
-			MouthVenc: Yup.string().when(( schema) =>
+			MouthVenc: Yup.string().when((values, schema) =>
         entrega ? schema.required('O campo é obrigatorio').min(2,'O mês tem 2 caracteres correija seu erro').max(2,'O campo esta errado') : schema
       ),
-			YearVenc: Yup.string().when((schema) =>
+			YearVenc: Yup.string().when((values, schema) =>
         entrega ? schema.required('O campo é obrigatorio').min(4,'O ano tem mais de 3 caracteres') : schema
       ),
-			CodeCard: Yup.string().when((schema) =>
+			CodeCard: Yup.string().when((values, schema) =>
         entrega ? schema.required('O campo é obrigatorio').min(3,'O cartão deve ter no minimo 3 caracteres') : schema
       ),
 
