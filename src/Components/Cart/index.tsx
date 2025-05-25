@@ -39,19 +39,19 @@ export default function CartHeader() {
 			NumberHouse: Yup.string().min(1,'Por favor verifique o número de sua residencia e tente novamente').required('Campo Obrigatorio'),
 			Complement: Yup.string().min(5,'O minimo é 5 caracteres'),
 
-			CardName: Yup.string().when((values, schema) =>
+			CardName: Yup.string().when((_, schema) =>
         entrega ? schema.required('O campo é obrigatorio').min(5,'O nome deve ter no minimo 5 caracteres') : schema
       ),
-			NumberCard: Yup.string().when((values, schema) =>
+			NumberCard: Yup.string().when((_, schema) =>
         entrega ? schema.required('O campo é obrigatorio').min(16,'O cartão deve ter no minimo 16 caracteres').max(16,'O cartão deve ter no minimo 16 caracteres') : schema
       ),
-			MouthVenc: Yup.string().when((values, schema) =>
+			MouthVenc: Yup.string().when((_, schema) =>
         entrega ? schema.required('O campo é obrigatorio').min(2,'O mês tem 2 caracteres correija seu erro').max(2,'O campo esta errado') : schema
       ),
-			YearVenc: Yup.string().when((values, schema) =>
+			YearVenc: Yup.string().when((_, schema) =>
         entrega ? schema.required('O campo é obrigatorio').min(4,'O ano tem mais de 3 caracteres') : schema
       ),
-			CodeCard: Yup.string().when((values, schema) =>
+			CodeCard: Yup.string().when((_, schema) =>
         entrega ? schema.required('O campo é obrigatorio').min(3,'O cartão deve ter no minimo 3 caracteres') : schema
       ),
 
@@ -133,7 +133,7 @@ export default function CartHeader() {
 						</>
 				))}
 				<p>Valor total <span>{formatapreco(getTotalPrice())}</span></p>
-				<ButtonModal onClick={()=> setCheckout(true)}>Continuar com a entrega</ButtonModal>
+				<ButtonModal type="submit" onClick={()=> setCheckout(true)}>Continuar com a entrega</ButtonModal>
 			</SideBar>
 		</CartCotainer>
 
@@ -195,7 +195,7 @@ export default function CartHeader() {
 							<small>{getErrorMessage('Complement', form.errors.Complement)}</small>	
 							<br/>
 							<ButtonModal type="button" onClick={()=> setCheckout(false)}>Voltar para o carrinho</ButtonModal>
-							<ButtonModal onClick={()=> setEntrega(true)}>Continuar com a entrega</ButtonModal>
+							<ButtonModal type="submit" onClick={()=> setEntrega(true)}>Continuar com a entrega</ButtonModal>
 						</DeliveryContainer>
 						</form>
 					</SideBar>
@@ -259,7 +259,7 @@ export default function CartHeader() {
 						</Content>
 						<br />
 						<ButtonModal type="button" onClick={()=> setEntrega(false)}>Voltar para o carrinho</ButtonModal>
-						<ButtonModal>Continuar com a entrega</ButtonModal>
+						<ButtonModal type="submit" >Continuar com a entrega</ButtonModal>
 					</DeliveryContainer>
 						</form>
 				</SideBar>
