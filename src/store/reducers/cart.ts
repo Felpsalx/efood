@@ -23,7 +23,6 @@ const cartSlice = createSlice({
       } else {
         alert('O item ja foi adicionado ao carrinho')
       }
-				state.items.push(action.payload)
 				localStorage.setItem('items', JSON.stringify(state.items));
 		
 		},
