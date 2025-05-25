@@ -15,17 +15,17 @@ export default function Perfil() {
 
   return (
     <div>
-      <HeaderPerfil />
       <Suspense fallback={
-					<ContainerSpinner>
+				<ContainerSpinner>
 									<ClockLoader size={100} color={`${Cores.pink}`} />
 									<p>Carregando...</p>
 					</ContainerSpinner>
 			}>
-      <Banner />
-      <ProductsListTwo/>
-			<CartHeader />
+				<HeaderPerfil />
+				<Banner />
+				<ProductsListTwo/>
       </Suspense>
+			<CartHeader />
     </div>
   )
 }
