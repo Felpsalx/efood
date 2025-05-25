@@ -150,10 +150,15 @@ export const ContentOfcontent = styled.div`
 	flex-direction:column;
 
 `
-export const ContentOfText = styled.p`
+export const ContentOfText = styled.div`
+		height:286px;
+		width:344px;
+	p{
+	font-weight:400;
+	font-family:'Roboto';
 	font-size:14px;
 	line-height:22px;
-	width:344px;
-	height:286px;
-	font-weight:400;
+	height:80px;
+	}
 `
+
