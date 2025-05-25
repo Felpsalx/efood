@@ -17,7 +17,12 @@ const cartSlice = createSlice({
 	initialState,
 	reducers:{
 		add:(state, action: PayloadAction<ItensCardapio>)=>{
-				state.items.find((item)=>item.id=== action.payload.id)
+				const lunch = state.items.find((item)=>item.id=== action.payload.id)
+				if (!lunch) {
+        state.items.push(action.payload)
+      } else {
+        alert('O item ja foi adicionado ao carrinho')
+      }
 				state.items.push(action.payload)
 				localStorage.setItem('items', JSON.stringify(state.items));
 		
